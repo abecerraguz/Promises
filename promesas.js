@@ -1,5 +1,35 @@
 /*
 
+
+¿Qué es una promesa?
+Una promesa es un patrón en el que no se conoce la respuesta eventual (y cuánto tiempo llevará recibirla). 
+
+Las promesas tienen 3 estados ...
+Pendiente
+Resuelto
+Rechazado
+
+
+Un ejemplo de cómo se ve una promesa es el siguiente ...
+
+const noMondays = new Promise( (resolve, reject) => {
+    if(new Date().getDay() !== 1) {
+        resolve("Good, it's not Monday!");
+    } else {
+        reject("Someone has a case of the Mondays!");
+    }
+});
+noMondays
+    .then( res => console.log(res) )
+    .catch( err => console.log(err) );
+
+Ventajas de las promesas
+Mejor control del flujo de código asíncrono.
+Fácil de leer
+Evitar el "infierno de devolución de llamada"
+
+
+
 Lanzamiento de monedas
 Digamos que tenemos una función que simula lanzar una moneda ...
 
@@ -40,6 +70,8 @@ fiveHeads()
     .then( res => console.log('res--->',res) )
     .catch( err => console.log('error--->',err) );
 console.log( "Cuándo se ejecuta esto ahora" );
+
+
 
 */
 
